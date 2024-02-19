@@ -21,8 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { lang: Locale };
 }>) {
+
+  const lang = params.lang;
+  const dir = lang === "ar" ? "rtl" : "ltr";
   return (
-    <html lang={params.lang}>
+    <html lang={lang} dir={dir}>
       <body className={inter.className}>{children}</body>
     </html>
   );
