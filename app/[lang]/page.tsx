@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { Locale } from "../../i18n-config";
 import { getDictionary } from "../utils/get-dictionary";
+import Link from "next/link";
+import SearchComponent from "./SearchComponent";
+
 
 export default async function Home({
   params: { lang },
@@ -46,8 +49,12 @@ export default async function Home({
           height={37}
           priority
         />
+
       </div>
 
+      <Link href={'#card1'} scroll={true}> click me!</Link>
+
+      <SearchComponent dictionary={dictionary} />
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
         <a
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
@@ -60,7 +67,7 @@ export default async function Home({
               -&gt;
             </span>
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+          <p id="card1" className={`m-0 max-w-[30ch] text-sm opacity-50`}>
             {dictionary.main_page.cards.card1.content}
           </p>
         </a>
