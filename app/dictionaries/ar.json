@@ -1,5 +1,6 @@
 {
     "main_page": {
+        "url": "/main_page",
         "edit": "قم بالبداية بتعديل",
         "cards": {
             "card1": {
